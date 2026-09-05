@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lng-ticket-assistant"
+version = "0.1.0"
+description = "Simple agent for automatically solving common questions"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "huggingface-hub>=1.30.0",
+    "ipykernel>=7.3.0",
+    "ipywidgets>=8.1.9",
+    "lancedb>=0.38.0",
+    "pandas>=2.3.3",
+    "peft>=0.20.0",
+    "pillow>=12.1.1",
+    "pymupdf>=1.26.0",
+    "pytesseract>=0.3.13",
+    "ray>=2.58.0",
+    "transformers>=5.16.1",
+]
+
+[project.scripts]
+lng-ticket-assistant = "lng_ticket_assistant.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
