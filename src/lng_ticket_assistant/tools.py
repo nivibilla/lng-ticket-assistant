@@ -52,6 +52,11 @@ def make_search_knowledge_base_tool(
 
         results = [
             {
+                "evidence_id": f"chunk-{match.chunk_id}",
+                "chunk_id": match.chunk_id,
+                "source": match.source,
+                "page_start": match.page_start,
+                "page_end": match.page_end,
                 "citation": _citation(match),
                 "content": match.text,
             }

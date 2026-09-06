@@ -10,6 +10,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "deepagents>=0.7.13",
+    "fastapi>=0.115",
     "huggingface-hub>=1.30.0",
     "ipykernel>=7.3.0",
     "ipywidgets>=8.1.9",
@@ -26,12 +27,19 @@ dependencies = [
     "ray>=2.58.0",
     "torch>=2.14.0",
     "transformers>=5.16.1",
+    "uvicorn>=0.34",
 ]
 
 [project.scripts]
+lng-ticket-web = "lng_ticket_assistant.web:main"
 lng-ticket-assistant = "lng_ticket_assistant.main:main"
 lng-ticket-preprocess = "lng_ticket_assistant.preprocess:main"
 lng-ticket-rebuild-embeddings = "lng_ticket_assistant.rebuild_embeddings:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28",
+]
